@@ -6,11 +6,12 @@ import matplotlib.pyplot as plt
 chipo = pd.read_csv('chipotle_fixed.csv')
 
 # first 10 entries
-# first_ten_entries = chipo.head(10)
-# chipo_shape = chipo.shape # 4622 rows
-# chipo_info = chipo.info()
-# print('FIRST TEN OBSERVATIONS:')
-# print(first_ten_entries)
+first_ten_entries = chipo.head(10)
+chipo_shape = chipo.shape # 4622 rows
+chipo_info = chipo.info()
+print('FIRST TEN OBSERVATIONS:')
+print(first_ten_entries)
+print(chipo)
 # print('Overall Structure:')
 # print(chipo_shape)
 # print('Chipo Dataset Structure:')
@@ -21,6 +22,7 @@ chipo = pd.read_csv('chipotle_fixed.csv')
 # print(chipo.index)
 # # Which was the most-ordered item?
 item_quantity_ordered = chipo.groupby(['item_name'])['quantity'].sum().sort_values(ascending = False)
+# How many products cost more than $10.00?
 # print(item_quantity_ordered)
 print(f'Most Purchased Item: Chicken Bowl - {item_quantity_ordered.index[0]}')
 
